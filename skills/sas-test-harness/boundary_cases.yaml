@@ -1,0 +1,11 @@
+# Standard Edge Cases for LP Emulator Testing
+boundaries:
+  - name: "first_month_reset"
+    description: "RETAIN variables must reset when age == 0 or first.account_id is true"
+    overrides: {"age": 0}
+  - name: "mi_cancellation"
+    description: "Effective MI must be 0 when amort_oltv <= 0.78"
+    overrides: {"amort_oltv": 0.78}
+  - name: "zero_upb"
+    description: "Handle division by zero when unpaid principal balance is 0"
+    overrides: {"oupb": 0.0}

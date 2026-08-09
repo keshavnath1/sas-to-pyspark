@@ -1,0 +1,12 @@
+patterns:
+  - name: "retain_by_group_state"
+    sas_code_block: |
+      data output;
+        set input;
+        by account_id;
+        retain balance;
+        if first.account_id then balance = 0;
+        balance = balance + transaction_amt;
+      run;
+    target_module_type: "panel"
+    complexity: "HIGH"

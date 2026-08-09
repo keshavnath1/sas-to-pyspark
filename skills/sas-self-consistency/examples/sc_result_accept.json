@@ -1,0 +1,9 @@
+{
+  "pattern": "retain_by_group_state",
+  "tally": {
+    "stateful_loop_accumulation": 4,
+    "window_function_lag": 1
+  },
+  "decision": "ACCEPT",
+  "winning_pattern": "stateful_loop_accumulation"
+}
